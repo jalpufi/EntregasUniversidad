@@ -1,0 +1,104 @@
+#caja1, #caja2, #caja3, #caja4, #caja5, #caja6 {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+/* Alineación del texto */
+#caja1, #caja6 {
+    text-align: right;
+}
+
+#caja2, #caja5 {
+    text-align: center;
+}
+
+#caja3, #caja4 {
+    text-align: left;
+}
+
+/* Colores de las cajas */
+#caja1, #caja5 {
+    background-color: #FFF4A3;
+}
+
+#caja2, #caja6 {
+    background-color: rgb(255, 192, 199);
+}
+
+#caja3, #caja4 {
+    background-color: lightseagreen;
+}
+
+/* Imágenes */
+img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* Contenedor de las cajas */
+.grid-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px;
+}
+
+/* Selector universal */
+* {
+    color: blue;
+    font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+}
+
+.encabezado {
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado img {
+    position: absolute;
+    left: 20px;
+    width: 70px;
+}
+
+.encabezado h1 {
+    margin: 0;
+    color: blue;
+    text-align: center;
+}
+
+.descripcion {
+    background-color: #fcebdc;
+    width: 90%;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.descripcion h3,
+.descripcion p {
+    color: #8a3ffc;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: auto;
+}
+
+
+

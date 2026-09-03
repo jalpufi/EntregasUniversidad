@@ -1,6 +1,31 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+}
+
+.estilo-parrafo {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
     background-color: #f4f4f4;
 }
 
@@ -64,13 +89,23 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="time"],
-select {
+input[type="number"],
+select,
+textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Ajustes propios del textarea */
+textarea {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
 }
 
 button {

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Agendamiento de citas médicas</title>
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
+
 <body>
   <div id="notificaciones" class="notificaciones-contenedor"></div>
 
@@ -14,47 +18,122 @@
     <p>Laboratorio 3 — JavaSript - Manejo del DOM - Arquitectura en Capas</p>
   </header>
 
-  <h2>Registrar Medico</h2>
-  <form id="formMedico">
-    <input type="text" id="nombresMedico" placeholder="Nombres" required>
-    <input type="text" id="apellidosMedico" placeholder="Apellidos" required>
-    <button type="submit" id="btnAgregarMedico" disabled>Agregar Medico</button>
-  </form>
+ <h2>Registrar Medico</h2>
+<form id="formMedico">
+    <label for="nombresMedico">Nombres:</label>
+    <input type="text" id="nombreMedico" placeholder="Nombres">
+    <label class="notificacion-error" id="errorNombreMedico"></label>
+    <label class="notificacion-exito" id="exitoNombreMedico"></label>
+
+    <label for="apellidosMedivo">Apellidos:</label>
+    <input type="text" id="apellidoMedico" placeholder="Apellidos">
+    <label class="notificacion-error" id="errorApellidoMedico"></label>
+    <label class="notificacion-exito" id="exitoApellidoMedico"></label>
+
+    <label for="especialidadMedico">Especialidad:</label>
+    <input type="text" id="especialidadMedico" placeholder="Especialidad">
+    <label class="notificacion-error" id="errorEspecialidadMedico"></label>
+    <label class="notificacion-exito" id="exitoEspecialidadMedico"></label>
+
+    <label for="horaInicioMedico">Hora Inicio</label>
+    <input type="time" id="horaInicioMedico">
+    <label class="notificacion-error" id="errorHoraInicioMedico"></label>
+    <label class="notificacion-exito" id="exitoHoraInicioMedico"></label>
+
+    <label for="horaFinMedico">Hora Fin</label>
+    <input type="time" id="horaFinMedico" disabled>
+    <label class="notificacion-error" id="errorHoraFinMedico"></label>
+    <label class="notificacion-exito" id="exitoHoraFinMedico"></label>
+
+    <label for="aniosExperienciaMedico">Años de experiencia</label>
+    <input type="number" id="aniosExperienciaMedico" placeholder="Años de experiencia" min="0">
+    <label class="notificacion-error" id="errorAniosExperiencia"></label>
+    <label class="notificacion-exito" id="exitoAniosExperiencia"></label>
+
+    <label for="bibliografiaMedico">Bibliografia</label>
+    <textarea id="bibliografiaMedico" placeholder="Bibliografía"></textarea>
+    <label class="notificacion-error" id="errorBibliografia"></label>
+    <label class="notificacion-exito" id="exitoBilibiografia"></label>
+    
+    <button type="submit" id="btnAgregarMedico">Agregar Medico</button>
+</form>
 
   <h2>Registrar Paciente</h2>
   <form id="formPaciente">
-    <input type="text" id="nombresPaciente" placeholder="Nombres" required>
-    <input type="text" id="apellidosPaciente" placeholder="Apellidos" required>
-    <button type="submit" id="btnAgregarPaciente" disabled>Agregar Paciente</button>
+    <label for="nombresPaciente">Nombres:</label>
+    <input type="text" id="nombresPaciente" placeholder="Nombres" >
+    <label class="notificacion-error" id="errorNombrePaciente"></label>
+    <label class="notificacion-exito" id="exitoNombrePaciente"></label>
+
+    <label for="apellidosPaciente">Apellidos:</label>
+    <input type="text" id="apellidosPaciente" placeholder="Apellidos" >
+    <label class="notificacion-error" id="errorApellidoPaciente"></label>
+    <label class="notificacion-exito" id="exitoApellidoPaciente"></label>
+    
+
+    <fieldset class="radio-group">
+      <legend>Genero:</legend>
+      <label>
+        <input type="radio" id="femenino" name="genero" value="femenino">
+        femenino
+      </label>
+      <label>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        masculino
+      </label>
+      <label>
+        <input type="radio" id="otro" name="genero" value="otro">
+        otro
+      </label>
+      <label class="notificacion-error" id="errorGenero"></label>
+      <label class="notificacion-exito" id="exitoGenero"></label>
+    </fieldset><br>
+
+    <button type="submit" id="btnAgregarPaciente">Agregar Paciente</button>
   </form>
 
   <h2>Registrar citas medicas</h2>
-  <form id="formCitas">
-    
+<form id="formCitas">
+
     <label for="fecha">Fecha</label>
-    <input type="date" id="fecha" required>
+    <input type="date" id="fecha">
+    <label class="notificacion-error" id="errorFecha"></label>
+    <label class="notificacion-exito" id="exitoFecha"></label>
 
     <label for="horaInicio">Hora Inicio</label>
-    <input type="time" id="horaInicio" required>
+    <input type="time" id="horaInicio">
+    <label class="notificacion-error" id="errorHoraInicioCita"></label>
+    <label class="notificacion-exito" id="exitoHoraInicioCita"></label>
 
     <label for="horaFin">Hora Fin</label>
-    <input type="time" id="horaFin" required>
+    <input type="time" id="horaFin">
+    <label class="notificacion-error" id="errorHoraFinCita"></label>
+    <label class="notificacion-exito" id="exitoHoraFinCita"></label>
 
     <label for="MedicoSelect">Medico</label>
-    <select id="MedicoSelect" required></select>
+    <select id="MedicoSelect">
+        <option value="" disabled selected>Seleccione un médico</option>
+    </select>
+    <label class="notificacion-error" id="errorMedicoSelect"></label>
+    <label class="notificacion-exito" id="exitoMedicoSelect"></label>
 
     <label for="pacienteSelect">Paciente</label>
-    <select id="pacienteSelect" required></select>
-    <button type="submit" id="btnAgregarCita" disabled>Agregar Cita</button>
-  </form>
+    <select id="pacienteSelect">
+        <option value="" disabled selected>Seleccione un paciente</option>
+    </select>
+    <label class="notificacion-error" id="errorPacienteSelect"></label>
+    <label class="notificacion-exito" id="exitoPacienteSelect"></label>
+
+    <button type="submit" id="btnAgregarCita">Agregar Cita</button>
+</form>
 
   <h2>Citas Registradas</h2>
   <table border="1">
     <thead>
-      <tr>        
+      <tr>
         <th>Fecha</th>
         <th>Hora Inicio</th>
-        <th>Hora Fin</th>        
+        <th>Hora Fin</th>
         <th>Medico</th>
         <th>Paciente</th>
       </tr>
@@ -68,27 +147,32 @@
   </footer>
 
   <!-- Archivos JS -->
-  <!-- 1. Entidades -->
-  <script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
-  <script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
-  <script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
+  <!-- Entidades -->
+<script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
+<script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
+<script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
 
-  <!-- 2. Repositorios -->
-  <script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
-  <script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
-  <script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
+<!-- Repositorios -->
+<script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
+<script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
+<script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
 
-  <!-- 3. Fachadas -->
-  <script src="../fachadaServices/gestionarMedicosServices.js"></script>
-  <script src="../fachadaServices/gestionarPacientesServices.js"></script>
-  <script src="../fachadaServices/gestionarCitasServices.js"></script>
+<!-- Validaciones -->
+<script src="../validaciones/validacionesMedico.js"></script>
+<script src="../validaciones/validacionesPaciente.js"></script>
+<script src="../validaciones/validacionesCita.js"></script>
 
-  <!-- 4. Vista (estos sí están en la misma carpeta que index.html) -->
-  <script src="notificaciones.js"></script>
-  <script src="logicaMedico.js"></script>
-  <script src="logicaPaciente.js"></script>
-  <script src="logicaCita.js"></script>
+<!-- Servicios -->
+<script src="../fachadaServices/gestionarMedicosServices.js"></script>
+<script src="../fachadaServices/gestionarPacientesServices.js"></script>
+<script src="../fachadaServices/gestionarCitasServices.js"></script>
 
+<!-- Presentación -->
+<script src="notificaciones.js"></script>
+<script src="logicaMedico.js"></script>
+<script src="logicaPaciente.js"></script>
+<script src="logicaCita.js"></script>
 
 </body>
+
 </html>

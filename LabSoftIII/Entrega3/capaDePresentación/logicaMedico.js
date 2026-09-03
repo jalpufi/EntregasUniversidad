@@ -2,25 +2,46 @@ const formMedico = document.getElementById("formMedico");
 const medicoSelect = document.getElementById("MedicoSelect");
 const btnAgregarMedico = document.getElementById("btnAgregarMedico");
 
-// habilita/deshabilita el botón según la validez del formulario
-formMedico.addEventListener("input", () => {
-  btnAgregarMedico.disabled = !formMedico.checkValidity();
-});
 
 formMedico.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const nombres = document.getElementById("nombresMedico").value;
-  const apellidos = document.getElementById("apellidosMedico").value;
+    e.preventDefault();
 
-  const medico = gestionarMedicos.registrarMedico(nombres, apellidos);
-  // actualizar select
-  const option = document.createElement("option");
-  option.value = medico.id;
-  option.textContent = `${medico.nombres} ${medico.apellidos}`;
-  medicoSelect.appendChild(option);
+     if (!validarFormularioMedico()) {
+        return;
+    }
 
-  formMedico.reset();
-  btnAgregarMedico.disabled = true;
+    const nombres = document.getElementById("nombreMedico").value;
+    const apellidos = document.getElementById("apellidoMedico").value;
+    const especialidad = document.getElementById("especialidadMedico").value;
+    const horaInicio = document.getElementById("horaInicioMedico").value;
+    const horaFin = document.getElementById("horaFinMedico").value;
+    const aniosExperiencia = document.getElementById("aniosExperienciaMedico").value;
+    const bibliografia = document.getElementById("bibliografiaMedico").value;
 
-  mostrarNotificacion(`Médico ${medico.nombres} ${medico.apellidos} registrado con éxito`);
+    const medico = gestionarMedicos.registrarMedico(
+        nombres,
+        apellidos,
+        especialidad,
+        horaInicio,
+        horaFin,
+        aniosExperiencia,
+        bibliografia
+    );
+
+    console.log("Médico registrado:", medico);
+
+    // Agregar médico al select de citas
+    const option = document.createElement("option");
+    option.value = medico.id;
+    option.textContent = `${medico.nombres} ${medico.apellidos}`;
+
+    medicoSelect.appendChild(option);
+
+    console.log("Médicos disponibles:", gestionarMedicos.listarMedicos());
+
+    formMedico.reset();
+
+    mostrarNotificacion(
+        `Médico ${medico.nombres} ${medico.apellidos} registrado con éxito`
+    );
 });

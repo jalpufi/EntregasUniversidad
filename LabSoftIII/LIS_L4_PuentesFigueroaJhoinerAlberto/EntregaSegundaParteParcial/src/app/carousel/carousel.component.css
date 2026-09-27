@@ -1,0 +1,9 @@
+.carousel-wrapper { height: 460px; overflow: hidden; border-radius: 16px; position: relative; background: #DDF8F6; box-shadow: 0 10px 28px rgba(7, 89, 133, .14); }
+.carousel-slide { height: 460px; animation: aparecer .35s ease-in-out; }
+.carousel-slide img { width: 100%; height: 460px; object-fit: contain; display: block; }
+.carousel-caption { position: absolute; left: 10%; right: 10%; bottom: 2rem; background: linear-gradient(90deg, rgba(7,89,133,.92), rgba(14,165,164,.88)); border-radius: 14px; color: #fff; padding: 1rem 1.25rem; }
+.carousel-caption h3 { font-size: 1.6rem; }
+.carousel-indicators-custom { position: absolute; bottom: .7rem; left: 50%; transform: translateX(-50%); display: flex; gap: .4rem; z-index: 3; }
+.carousel-indicators-custom button { width: 11px; height: 11px; border: 2px solid #fff; border-radius: 50%; background: transparent; }
+.carousel-indicators-custom button.active { background: #F97316; border-color: #F97316; }
+@media (max-width: 767.98px) { .carousel-wrapper, .carousel-slide, .carousel-slide img { height: 360px; } .carousel-caption { left: 5%; right: 5%; bottom: 2rem; } .carousel-caption h3 { font-size: 1.1rem; } .carousel-caption p { font-size: .85rem; margin-bottom: 0; } }

@@ -1,0 +1,73 @@
+<section id="medicos" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">Nuestros médicos</h2>
+
+    <div class="row g-4">
+      <aside class="col-12 col-sm-4 col-lg-3">
+        <div class="sidebar-especialidades">
+          <h5 class="mb-3">Especialidades</h5>
+
+          <div class="list-group list-group-flush">
+            @for (especialidad of especialidades; track especialidad.nombre) {
+              <button type="button"
+                      class="list-group-item list-group-item-action"
+                      [class.active-especialidad]="especialidadSeleccionada === especialidad.nombre"
+                      (click)="seleccionarEspecialidad(especialidad)">
+                {{ especialidad.nombre }}
+              </button>
+            }
+          </div>
+
+          <div id="descripcionEspecialidad">
+            @if (descripcionActual) {
+              <strong>{{ especialidadSeleccionada }}:</strong>
+              {{ descripcionActual }}
+            } @else {
+              <em>Selecciona una especialidad para ver su descripción.</em>
+            }
+          </div>
+        </div>
+      </aside>
+
+      <div class="col-12 col-sm-8 col-lg-9">
+        <div class="row g-3">
+          @for (medico of medicosFiltrados; track medico.nombre) {
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card card-medico">
+                <img [src]="medico.imagen" class="card-img-top img-fluid border-bottom"
+                     [alt]="medico.nombre">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title mb-1">{{ medico.nombre }}</h5>
+                  <p class="text-muted mb-1 small">{{ medico.especialidad }}</p>
+                  <p class="card-text small flex-grow-1">{{ medico.descripcion }}</p>
+                  <button class="btn btn-primary btn-sm mt-2"
+                          (click)="abrirCita(medico)">
+                    <i class="bi bi-calendar-check me-1"></i>Agendar Cita
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        @if (medicosFiltrados.length === 0) {
+          <div class="alert alert-info mt-3">No hay médicos para la especialidad seleccionada.</div>
+        }
+      </div>
+    </div>
+  </div>
+
+  @if (medicoSeleccionado) {
+    <div class="modal-backdrop-custom" (click)="cerrarCita()">
+      <div class="modal-card" (click)="$event.stopPropagation()">
+        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+          <h5 class="mb-0">Agendar cita</h5>
+          <button type="button" class="btn-close" (click)="cerrarCita()" aria-label="Cerrar"></button>
+        </div>
+        <p>Estás a punto de agendar una cita con <strong>{{ medicoSeleccionado.nombre }}</strong>.</p>
+        <p class="small text-muted mb-3">Completa el formulario de registro para confirmar tu cita.</p>
+        <a href="#registro" class="btn btn-primary" (click)="cerrarCita()">Ir al formulario</a>
+      </div>
+    </div>
+  }
+</section>

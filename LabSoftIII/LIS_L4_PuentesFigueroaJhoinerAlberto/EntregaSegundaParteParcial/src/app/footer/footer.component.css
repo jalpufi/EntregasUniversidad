@@ -1,0 +1,6 @@
+footer { background: linear-gradient(135deg, #075985, #064E6E); color: #E8F7FA; }
+footer a { color: #E8F7FA; }
+footer a:hover { color: #FFE08A; }
+footer h5 { color: #fff; }
+.redes-sociales a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 2px solid #0EA5A4; border-radius: 50%; margin-right: .5rem; }
+.redes-sociales a:hover { background-color: #F97316; border-color: #F97316; color: #fff; }

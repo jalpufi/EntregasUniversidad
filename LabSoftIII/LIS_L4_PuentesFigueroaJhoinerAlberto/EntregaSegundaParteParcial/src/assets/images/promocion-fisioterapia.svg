@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Fisioterapia</title>
+  <desc id="desc">20% de descuento en paquetes</desc>
+  <rect width="900" height="520" fill="#e9f1ee"/>
+  <circle cx="760" cy="90" r="120" fill="#274b46" opacity=".10"/>
+  <circle cx="120" cy="430" r="150" fill="#d97a5f" opacity=".10"/>
+  <rect x="90" y="80" width="720" height="360" rx="28" fill="#ffffff" opacity=".82"/>
+  <circle cx="450" cy="205" r="72" fill="#274b46" opacity=".9"/>
+  <path d="M325 400c10-85 65-125 125-125s115 40 125 125" fill="#274b46" opacity=".9"/>
+  <text x="450" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#274b46">Fisioterapia</text>
+  <text x="450" y="480" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#555">20% de descuento en paquetes</text>
+</svg>

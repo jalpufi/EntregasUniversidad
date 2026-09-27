@@ -1,0 +1,187 @@
+  :root{
+    --clinica-verde-oscuro:#075985;
+    --clinica-verde:#0EA5A4;
+    --clinica-verde-suave:#E6FFFB;
+    --clinica-arena:#F7FBFC;
+    --clinica-coral:#F97316;
+    --bs-primary: var(--clinica-verde-oscuro);
+    --bs-primary-rgb: 7,89,133;
+  }
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:#2b2b2b;
+    background-color:var(--clinica-arena);
+  }
+  h1,h2,h3,h4,.brand-font{
+    font-family:'Fraunces', serif;
+  }
+  a{ text-decoration:none; }
+
+  /* Header */
+  .top-bar{
+    background-color:var(--clinica-verde-oscuro);
+    color:#f2ede4;
+    font-size:.85rem;
+  }
+  .top-bar a{ color:#f2ede4; }
+  .top-bar a:hover{ color:var(--clinica-coral); }
+  .brand-header h1{
+    font-size:2rem;
+    color:var(--clinica-verde-oscuro);
+    margin-bottom:.1rem;
+  }
+  .brand-header p{
+    color:#6b6b6b;
+    margin-bottom:0;
+  }
+
+  /* Navbar */
+  .navbar-clinica{
+    background-color:#ffffff;
+    border-top:1px solid #e4ded2;
+    border-bottom:4px solid var(--clinica-verde);
+  }
+  .navbar-clinica .nav-link{
+    color:var(--clinica-verde-oscuro);
+    font-weight:500;
+    margin:0 .35rem;
+  }
+  .navbar-clinica .nav-link:hover, .navbar-clinica .nav-link.active{
+    color:var(--clinica-coral);
+  }
+
+  /* Carousel */
+  .carousel-wrapper{
+    max-height:460px;
+    overflow:hidden;
+    border-radius:4px;
+  }
+  .carousel-wrapper img{
+    width:100%;
+    height:460px;
+    object-fit:cover;
+  }
+  .carousel-caption h3{ font-size:1.6rem; }
+  .carousel-caption{
+    background:linear-gradient(90deg,rgba(7,89,133,.92),rgba(14,165,164,.88));
+    border-radius:4px;
+    bottom:2rem;
+  }
+
+  /* Section titles */
+  .section-title{
+    color:var(--clinica-verde-oscuro);
+    border-bottom:2px solid var(--clinica-verde);
+    display:inline-block;
+    padding-bottom:.3rem;
+    margin-bottom:1.75rem;
+  }
+  section{ scroll-margin-top:90px; }
+
+  /* Sidebar especialidades */
+  .sidebar-especialidades{
+    background-color:#ffffff;
+    border:1px solid #e4ded2;
+    border-radius:6px;
+    padding:1.25rem;
+  }
+  .sidebar-especialidades .list-group-item{
+    border:none;
+    border-left:3px solid transparent;
+    padding:.55rem .5rem;
+    color:var(--clinica-verde-oscuro);
+    font-weight:500;
+    background:transparent;
+  }
+  .sidebar-especialidades .list-group-item:hover,
+  .sidebar-especialidades .list-group-item.active-especialidad{
+    border-left:3px solid var(--clinica-coral);
+    background-color:var(--clinica-verde-suave);
+    color:var(--clinica-verde-oscuro);
+  }
+  #descripcionEspecialidad{
+    font-size:.9rem;
+    color:#555;
+    border-top:1px dashed #d7cfbf;
+    margin-top:1rem;
+    padding-top:1rem;
+    min-height:70px;
+  }
+
+  /* Doctor cards */
+  .card-medico{
+    border:1px solid #e4ded2;
+    height:100%;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card-medico:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(7,89,133,.12);
+  }
+  .card-medico img{ height:190px; object-fit:cover; }
+  .card-medico .btn-primary{
+    background-color:var(--clinica-verde-oscuro);
+    border-color:var(--clinica-verde-oscuro);
+  }
+  .card-medico .btn-primary:hover{
+    background-color:var(--clinica-coral);
+    border-color:var(--clinica-coral);
+  }
+
+  /* Form */
+  #registro{ background-color:var(--clinica-verde-suave); }
+  .form-registro{
+    background:#ffffff;
+    border-radius:6px;
+    padding:2rem;
+    border:1px solid #e4ded2;
+  }
+  .btn-registro{
+    background-color:var(--clinica-verde-oscuro);
+    border-color:var(--clinica-verde-oscuro);
+  }
+  .btn-registro:hover{
+    background-color:var(--clinica-coral);
+    border-color:var(--clinica-coral);
+  }
+
+  /* Product cards */
+  .card-producto{ border:1px solid #e4ded2; height:100%; }
+  .card-producto img{ height:170px; object-fit:cover; }
+  .card-producto .precio{
+    color:var(--clinica-coral);
+    font-weight:600;
+  }
+
+  /* Footer */
+  footer{
+    background-color:var(--clinica-verde-oscuro);
+    color:#ded9cd;
+  }
+  footer a{ color:#ded9cd; }
+  footer a:hover{ color:var(--clinica-coral); }
+  footer h5{ color:#ffffff; }
+  .redes-sociales a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px; height:38px;
+    border:1px solid #4c6f68;
+    border-radius:50%;
+    margin-right:.5rem;
+  }
+  .redes-sociales a:hover{
+    background-color:var(--clinica-coral);
+    border-color:var(--clinica-coral);
+    color:#fff;
+  }
+
+/* Ajustes visuales: paleta viva y amigable para clínica */
+.navbar-clinica { background: linear-gradient(90deg, #0EA5A4, #0EA5E9); border-top: 0; border-bottom: 4px solid #075985; }
+.navbar-clinica .nav-link { color: #fff; font-weight: 600; border-radius: 999px; }
+.navbar-clinica .nav-link:hover, .navbar-clinica .nav-link.active { color: #fff; background-color: #7C3AED; }
+.sidebar-especialidades { box-shadow: 0 8px 20px rgba(7,89,133,.07); }
+.sidebar-especialidades .list-group-item:hover, .sidebar-especialidades .list-group-item.active-especialidad { background-color: #DDF8F6; }
+.card-medico, .card-producto { border-color: #D6EEF0; border-radius: 14px; overflow: hidden; }
+.card-medico:hover, .card-producto:hover { border-color: #0EA5A4; box-shadow: 0 12px 24px rgba(7,89,133,.14); }
+.form-registro { box-shadow: 0 12px 28px rgba(7,89,133,.09); }

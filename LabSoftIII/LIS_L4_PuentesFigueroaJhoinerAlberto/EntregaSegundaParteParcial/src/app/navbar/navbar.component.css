@@ -1,0 +1,4 @@
+.navbar-clinica { background: linear-gradient(90deg, #0EA5A4, #0EA5E9); border-top: 0; border-bottom: 4px solid #075985; }
+.navbar-clinica .navbar-brand, .navbar-clinica .nav-link { color: #fff; font-weight: 700; }
+.navbar-clinica .nav-link { margin: 0 .35rem; border-radius: 999px; padding-left: .8rem; padding-right: .8rem; }
+.navbar-clinica .nav-link:hover, .navbar-clinica .nav-link.active { color: #fff; background-color: rgba(124, 58, 237, .9); }

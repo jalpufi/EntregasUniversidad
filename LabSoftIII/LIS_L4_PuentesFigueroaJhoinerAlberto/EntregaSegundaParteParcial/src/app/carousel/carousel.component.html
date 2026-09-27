@@ -1,0 +1,36 @@
+<section id="promociones" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Promociones de este mes</h2>
+
+    <div class="carousel-wrapper position-relative">
+      @for (promocion of promociones; track $index) {
+        @if ($index === promocionActual) {
+          <div class="carousel-slide">
+            <img [src]="promocion.imagen" [alt]="promocion.alt" class="w-100">
+            <div class="carousel-caption p-3">
+              <h3>{{ promocion.titulo }}</h3>
+              <p>{{ promocion.descripcion }}</p>
+            </div>
+          </div>
+        }
+      }
+
+      <button class="carousel-control-prev" type="button"
+              (click)="anterior()" aria-label="Promoción anterior">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button"
+              (click)="siguiente()" aria-label="Promoción siguiente">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <div class="carousel-indicators-custom">
+        @for (promocion of promociones; track $index) {
+          <button type="button" [class.active]="$index === promocionActual"
+                  (click)="seleccionar($index)"
+                  [attr.aria-label]="'Promoción ' + ($index + 1)"></button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

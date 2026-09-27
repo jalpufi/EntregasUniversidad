@@ -1,0 +1,5 @@
+#registro { background: linear-gradient(135deg, #E6FFFB, #EAF7FF); }
+.form-registro { background: #fff; border-radius: 16px; padding: 2rem; border: 2px solid #D6EEF0; box-shadow: 0 12px 28px rgba(7,89,133,.09); }
+.form-control:focus, .form-select:focus, .form-check-input:focus { border-color: #0EA5E9; box-shadow: 0 0 0 .2rem rgba(14,165,233,.18); }
+.btn-registro { background-color: #0EA5E9; border-color: #0EA5E9; color: #fff; }
+.btn-registro:hover { background-color: #7C3AED; border-color: #7C3AED; color: #fff; }

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md navbar-clinica sticky-top py-2">
+  <div class="container-fluid">
+    <a class="navbar-brand brand-font fw-bold" href="#promociones">YOYO</a>
+
+    <button class="navbar-toggler" type="button"
+            (click)="menuAbierto = !menuAbierto"
+            [attr.aria-expanded]="menuAbierto"
+            aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.show]="menuAbierto">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 text-center">
+        <li class="nav-item"><a class="nav-link" href="#promociones" (click)="cerrarMenu()">Promociones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#medicos" (click)="cerrarMenu()">Nuestros médicos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#registro" (click)="cerrarMenu()">Agendar / Registro</a></li>
+        <li class="nav-item"><a class="nav-link" href="#productos" (click)="cerrarMenu()">Tienda</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,12 @@
+.sidebar-especialidades { background: linear-gradient(180deg, #fff, #E6FFFB); border: 2px solid #BFEAE6; border-radius: 14px; padding: 1.25rem; height: 100%; box-shadow: 0 8px 20px rgba(7,89,133,.07); }
+.sidebar-especialidades .list-group-item { border: none; border-left: 4px solid transparent; padding: .65rem .6rem; color: #075985; font-weight: 700; background: transparent; text-align: left; border-radius: 0 10px 10px 0; }
+.sidebar-especialidades .list-group-item:hover, .sidebar-especialidades .list-group-item.active-especialidad { border-left-color: #F97316; background-color: #DDF8F6; color: #075985; }
+#descripcionEspecialidad { font-size: .9rem; color: #52616B; border-top: 1px dashed #8DD8D2; margin-top: 1rem; padding-top: 1rem; min-height: 70px; }
+.card-medico { border: 2px solid #D6EEF0; height: 100%; border-radius: 14px; overflow: hidden; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.card-medico:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(7,89,133,.15); border-color: #0EA5A4; }
+.card-medico img { height: 210px; object-fit: cover; background: #E6FFFB; }
+.card-medico .btn-primary { background-color: #0EA5E9; border-color: #0EA5E9; }
+.card-medico .btn-primary:hover { background-color: #7C3AED; border-color: #7C3AED; }
+.modal-backdrop-custom { position: fixed; inset: 0; background: rgba(7, 89, 133, .55); display: flex; align-items: center; justify-content: center; padding: 1rem; z-index: 1055; }
+.modal-card { width: min(500px, 100%); background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 20px 50px rgba(7,89,133,.25); border-top: 5px solid #0EA5A4; }
+@media (min-width: 768px) and (max-width: 991.98px) { .card-medico img { height: 190px; } }

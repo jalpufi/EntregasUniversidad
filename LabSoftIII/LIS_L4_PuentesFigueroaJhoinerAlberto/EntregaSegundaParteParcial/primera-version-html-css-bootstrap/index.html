@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica YOYO | Cuidado integral para tu salud</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="validacion.js" defer></script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="top-bar container-fluid py-1">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="redes-sociales-top">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="ms-2"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/message" target="_blank" aria-label="WhatsApp" class="ms-2"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid brand-header bg-white py-3">
+    <div class="container d-flex align-items-center">
+      <i class="fa-solid fa-heart-pulse fa-2x me-3" style="color:var(--clinica-azul-oscuro)"></i>
+      <div>
+        <h1 class="mb-0">Clínica YOYO</h1>
+        <p>Rehabilitación, terapia y bienestar para toda la familia</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-md navbar-clinica sticky-top py-2">
+  <div class="container-fluid">
+    <a class="navbar-brand brand-font fw-bold" href="#promociones" style="color:var(--clinica-azul-oscuro)">YOYO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+      aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 text-center">
+        <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#medicos">Nuestros médicos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#registro">Agendar / Registro</a></li>
+        <li class="nav-item"><a class="nav-link" href="#productos">Tienda</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= SECCIÓN 1: CARRUSEL DE PROMOCIONES ================= -->
+<section id="promociones" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Promociones de este mes</h2>
+
+    <div id="carruselPromociones" class="carousel slide carousel-wrapper" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
+        <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="1" aria-label="Promoción 2"></button>
+        <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="2" aria-label="Promoción 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=460&fit=crop" alt="Primera valoración gratuita">
+          <div class="carousel-caption d-none d-md-block p-3">
+            <h3>Primera valoración gratuita</h3>
+            <p>Agenda tu cita inicial sin costo durante todo el mes.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&h=460&fit=crop" alt="Paquete de fisioterapia">
+          <div class="carousel-caption d-none d-md-block p-3">
+            <h3>20% de descuento en fisioterapia</h3>
+            <p>Válido en paquetes de 10 sesiones o más.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&h=460&fit=crop" alt="Plan nutricional">
+          <div class="carousel-caption d-none d-md-block p-3">
+            <h3>Plan nutricional personalizado</h3>
+            <p>Incluye seguimiento mensual con nuestras especialistas.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromociones" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carruselPromociones" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECCIÓN 2: MÉDICOS ================= -->
+<section id="medicos" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">Nuestros médicos</h2>
+
+    <div class="row g-4">
+      <!-- Barra lateral de especialidades -->
+      <div class="col-12 col-sm-2 col-md-4">
+        <div class="sidebar-especialidades">
+          <h5 class="mb-3">Especialidades</h5>
+          <div class="list-group list-group-flush" id="listaEspecialidades">
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Terapia Neural es una técnica que regula el sistema nervioso autónomo mediante la aplicación de anestésicos locales en puntos específicos, ayudando a aliviar dolores crónicos y bloqueos energéticos.">Terapia Neural</a>
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Quiropraxia se enfoca en el diagnóstico y tratamiento manual de trastornos de la columna vertebral y el sistema musculoesquelético, mejorando la movilidad y aliviando el dolor sin cirugía.">Quiropraxia</a>
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Fisioterapia utiliza ejercicio terapéutico, electroterapia y técnicas manuales para recuperar la funcionalidad física tras lesiones, cirugías o enfermedades.">Fisioterapia</a>
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Nutrición y Dietética Terapéutica diseña planes alimenticios personalizados para tratar y prevenir enfermedades, y para acompañar procesos de rehabilitación y bienestar general.">Nutrición y Dietética Terapéutica</a>
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Medicina del Deporte previene, diagnostica y trata las lesiones relacionadas con la actividad física, optimizando el rendimiento y la recuperación de deportistas.">Medicina del Deporte</a>
+            <a href="#" class="list-group-item list-group-item-action"
+               data-especialidad="Odontología integral ofrece cuidado preventivo y restaurador de la salud oral para pacientes de todas las edades.">Odontología</a>
+          </div>
+          <div id="descripcionEspecialidad">
+            <em>Selecciona una especialidad para ver su descripción.</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cartas de médicos -->
+      <div class="col-12 col-sm-10 col-md-8">
+        <div class="row g-3" id="listaMedicos">
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top img-fluid border-bottom" alt="Dr. Juan Pérez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dr. Juan Pérez</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Fisioterapia Deportiva</p>
+                <p class="card-text small flex-grow-1">Comprometido con tu recuperación funcional, un paso a la vez.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dr. Juan Pérez">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top img-fluid border-bottom" alt="Dra. Catalina Sánchez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dra. Catalina Sánchez</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Quiropraxia</p>
+                <p class="card-text small flex-grow-1">La salud de tu columna es fundamental para tu bienestar diario.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dra. Catalina Sánchez">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/men/65.jpg" class="card-img-top img-fluid border-bottom" alt="Dr. Andrés Cardozo">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dr. Andrés Cardozo</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Nutrición y Dietética Terapéutica</p>
+                <p class="card-text small flex-grow-1">Un alimento sano y bien planeado alarga y mejora la vida.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dr. Andrés Cardozo">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" class="card-img-top img-fluid border-bottom" alt="Dra. Laura Gómez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dra. Laura Gómez</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Terapia Neural</p>
+                <p class="card-text small flex-grow-1">Tratamientos suaves y efectivos para el dolor crónico.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dra. Laura Gómez">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/men/76.jpg" class="card-img-top img-fluid border-bottom" alt="Dr. Felipe Rojas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dr. Felipe Rojas</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Medicina del Deporte</p>
+                <p class="card-text small flex-grow-1">Acompañamiento integral para deportistas de alto rendimiento.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dr. Felipe Rojas">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/women/22.jpg" class="card-img-top img-fluid border-bottom" alt="Dra. Marcela Vidal">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dra. Marcela Vidal</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Odontología</p>
+                <p class="card-text small flex-grow-1">Sonrisas sanas con atención cálida y cercana.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dra. Marcela Vidal">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top img-fluid border-bottom" alt="Dr. Sebastián Ortiz">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dr. Sebastián Ortiz</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Fisioterapia</p>
+                <p class="card-text small flex-grow-1">Recuperación gradual con técnicas manuales avanzadas.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dr. Sebastián Ortiz">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-medico">
+              <img src="https://randomuser.me/api/portraits/women/51.jpg" class="card-img-top img-fluid border-bottom" alt="Dra. Ana Torres">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Dra. Ana Torres</h5>
+                <p class="text-muted mb-1" style="font-size:.85rem;">Quiropraxia</p>
+                <p class="card-text small flex-grow-1">Ajustes precisos, enfoque en la prevención y el autocuidado.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalCita" data-medico="Dra. Ana Torres">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para agendar cita -->
+<div class="modal fade" id="modalCita" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agendar cita</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Estás a punto de agendar una cita con <strong id="nombreMedicoModal"></strong>.</p>
+        <p class="small text-muted mb-0">Completa el formulario de registro más abajo para confirmar tu cita, o llámanos al (602) 555-0134.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#registro" class="btn btn-primary" data-bs-dismiss="modal">Ir al formulario</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SECCIÓN 3: REGISTRO ================= -->
+<section id="registro" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Regístrate en Clínica YOYO</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="form-registro">
+          <p class="text-center mb-4 lead">
+            Crea tu cuenta para agendar citas y hacer seguimiento a tus tratamientos.
+            Te enviaremos un enlace de confirmación a tu correo electrónico para activar tu registro.
+          </p>
+
+          <form id="formularioRegistro" onsubmit="return validarFormulario()">
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="nombres" class="form-label">Nombres *</label>
+                <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Tus nombres">
+                <label class="text-danger form-text" id="errorNombres"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="apellidos" class="form-label">Apellidos *</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Tus apellidos">
+                <label class="text-danger form-text" id="errorApellidos"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="correo" class="form-label">Correo electrónico *</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                <div class="form-text">A este correo enviaremos el enlace para confirmar tu registro.</div>
+                <label class="text-danger form-text" id="errorCorreo"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono *</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3001234567">
+                <label class="text-danger form-text" id="errorTelefono"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="especialidadInteres" class="form-label">Especialidad de interés *</label>
+                <select class="form-select" id="especialidadInteres" name="especialidad-interes">
+                  <option value="" disabled selected>Seleccione una especialidad</option>
+                  <option>Terapia Neural</option>
+                  <option>Quiropraxia</option>
+                  <option>Fisioterapia</option>
+                  <option>Nutrición y Dietética Terapéutica</option>
+                  <option>Medicina del Deporte</option>
+                  <option>Odontología</option>
+                </select>
+                <label class="text-danger form-text" id="errorEspecialidad"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento *</label>
+                <input type="date" class="form-control" id="fechaNacimiento" name="fecha-nacimiento">
+                <label class="text-danger form-text" id="errorFechaNacimiento"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="contrasena" class="form-label">Contraseña *</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Mínimo 8 caracteres">
+                <label class="text-danger form-text" id="errorContrasena"></label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="confirmarContrasena" class="form-label">Confirmar contraseña *</label>
+                <input type="password" class="form-control" id="confirmarContrasena" name="confirmar-contrasena" placeholder="Repite la contraseña">
+                <label class="text-danger form-text" id="errorConfirmarContrasena"></label>
+              </div>
+
+              <fieldset class="col-12">
+                <legend class="form-label fs-6">Género *</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="genero" id="generoF" value="femenino">
+                  <label class="form-check-label" for="generoF">Femenino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="genero" id="generoM" value="masculino">
+                  <label class="form-check-label" for="generoM">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="genero" id="generoOtro" value="otro">
+                  <label class="form-check-label" for="generoOtro">Otro</label>
+                </div>
+                <label class="text-danger form-text d-block" id="errorGenero"></label>
+              </fieldset>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terminos" name="terminos">
+                  <label class="form-check-label" for="terminos">
+                    Acepto los términos y condiciones y el tratamiento de mis datos personales *
+                  </label>
+                  <label class="text-danger form-text d-block" id="errorTerminos"></label>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex justify-content-start mt-2">
+                <button type="submit" id="btnRegistrar" class="btn btn-primary btn-registro">Registrar</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECCIÓN 4: TIENDA / PRODUCTOS ================= -->
+<section id="productos" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">Productos de la tienda</h2>
+    <div class="row g-3">
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card card-producto">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" class="card-img-top" alt="Faja lumbar">
+          <div class="card-body">
+            <h6 class="card-title">Faja lumbar ortopédica</h6>
+            <p class="precio mb-2">$45.000</p>
+            <button class="btn btn-outline-dorado btn-sm w-100">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card card-producto">
+          <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400&h=300&fit=crop" class="card-img-top" alt="Rodillera deportiva">
+          <div class="card-body">
+            <h6 class="card-title">Rodillera deportiva</h6>
+            <p class="precio mb-2">$38.500</p>
+            <button class="btn btn-outline-dorado btn-sm w-100">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card card-producto">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop" class="card-img-top" alt="Suplemento nutricional">
+          <div class="card-body">
+            <h6 class="card-title">Suplemento multivitamínico</h6>
+            <p class="precio mb-2">$62.000</p>
+            <button class="btn btn-outline-dorado btn-sm w-100">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card card-producto">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" class="card-img-top" alt="Rodillo de masaje">
+          <div class="card-body">
+            <h6 class="card-title">Rodillo de masaje muscular</h6>
+            <p class="precio mb-2">$29.900</p>
+            <button class="btn btn-outline-dorado btn-sm w-100">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-5 mt-4">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <h5 class="brand-font">Clínica YOYO</h5>
+          <p class="small">Más de 15 años acompañando a nuestros pacientes en su camino hacia el bienestar físico y emocional.</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#medicos">Nuestros médicos</a></li>
+            <li><a href="#registro">Agendar / Registro</a></li>
+            <li><a href="#productos">Tienda</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Síguenos</h5>
+          <div class="redes-sociales mb-3">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/message" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <p class="small mb-0"><i class="fa-solid fa-location-dot me-1"></i> Calle 5 # 10-20, Popayán</p>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color:#3a4d70;">
+      <p class="small text-center mb-0">&copy; 2026 Clínica YOYO. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ----- Mostrar descripción de la especialidad seleccionada -----
+  const listaEspecialidades = document.getElementById('listaEspecialidades');
+  const descripcionEspecialidad = document.getElementById('descripcionEspecialidad');
+
+  listaEspecialidades.addEventListener('click', function(e){
+    e.preventDefault();
+    const link = e.target.closest('a[data-especialidad]');
+    if(!link) return;
+
+    listaEspecialidades.querySelectorAll('a').forEach(a => a.classList.remove('active-especialidad'));
+    link.classList.add('active-especialidad');
+
+    descripcionEspecialidad.innerHTML = '<strong>' + link.textContent + ':</strong> ' + link.dataset.especialidad;
+  });
+
+  // ----- Nombre del médico en el modal de agendar cita -----
+  const modalCita = document.getElementById('modalCita');
+  modalCita.addEventListener('show.bs.modal', function(event){
+    const boton = event.relatedTarget;
+    const nombreMedico = boton.getAttribute('data-medico');
+    document.getElementById('nombreMedicoModal').textContent = nombreMedico;
+  });
+
+</script>
+
+</body>
+</html>

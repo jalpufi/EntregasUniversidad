@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --clinica-verde-oscuro: #075985;
+  --clinica-verde: #0EA5A4;
+  --clinica-verde-suave: #E6FFFB;
+  --clinica-arena: #F7FBFC;
+  --clinica-coral: #F97316;
+  --clinica-azul-vivo: #0EA5E9;
+  --clinica-morado: #7C3AED;
+  --clinica-texto: #243447;
+  --clinica-borde: #CFE8E8;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--clinica-texto);
+  background-color: var(--clinica-arena);
+}
+h1, h2, h3, h4, h5, .brand-font { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; }
+section { scroll-margin-top: 90px; }
+.section-title {
+  color: var(--clinica-verde-oscuro);
+  border-bottom: 3px solid var(--clinica-azul-vivo);
+  display: inline-block;
+  padding-bottom: .3rem;
+  margin-bottom: 1.75rem;
+}
+.btn-primary {
+  background-color: var(--clinica-azul-vivo) !important;
+  border-color: var(--clinica-azul-vivo) !important;
+}
+.btn-primary:hover {
+  background-color: var(--clinica-morado) !important;
+  border-color: var(--clinica-morado) !important;
+}
+@keyframes aparecer { from { opacity: .2; } to { opacity: 1; } }

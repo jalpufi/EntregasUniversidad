@@ -1,0 +1,29 @@
+<section id="productos" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title">Productos de la tienda</h2>
+
+    <div class="row g-3">
+      @for (producto of productos; track producto.nombre) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card card-producto">
+            <img [src]="producto.imagen" class="card-img-top" [alt]="producto.alt">
+            <div class="card-body">
+              <h6 class="card-title">{{ producto.nombre }}</h6>
+              <p class="precio mb-2">{{ producto.precio }}</p>
+              <button class="btn btn-outline-dorado btn-sm w-100" type="button"
+                      (click)="agregar(producto)">
+                <i class="bi bi-cart-plus me-1"></i>Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (productoAgregado) {
+      <div class="alert alert-success mt-4 mb-0">
+        {{ productoAgregado }} agregado a la tienda.
+      </div>
+    }
+  </div>
+</section>

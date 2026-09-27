@@ -1,0 +1,163 @@
+<section id="registro" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Regístrate en Clínica YOYO</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="form-registro">
+          <p class="text-center mb-4 lead">
+            Crea tu cuenta para agendar citas y hacer seguimiento a tus tratamientos.
+          </p>
+
+          <form [formGroup]="formulario" (ngSubmit)="registrar()" novalidate>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="nombres" class="form-label">Nombres *</label>
+                <input id="nombres" type="text" class="form-control"
+                       formControlName="nombres" placeholder="Tus nombres"
+                       (blur)="validarAlSalir('nombres')"
+                       [class.is-invalid]="mostrarError('nombres')">
+                @if (mostrarError('nombres')) {
+                  <div class="invalid-feedback">{{ mensajeError('nombres') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="apellidos" class="form-label">Apellidos *</label>
+                <input id="apellidos" type="text" class="form-control"
+                       formControlName="apellidos" placeholder="Tus apellidos"
+                       (blur)="validarAlSalir('apellidos')"
+                       [class.is-invalid]="mostrarError('apellidos')">
+                @if (mostrarError('apellidos')) {
+                  <div class="invalid-feedback">{{ mensajeError('apellidos') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="correo" class="form-label">Correo electrónico *</label>
+                <input id="correo" type="email" class="form-control"
+                       formControlName="correo" placeholder="correo@ejemplo.com"
+                       (blur)="validarAlSalir('correo')"
+                       [class.is-invalid]="mostrarError('correo')">
+                <div class="form-text">Usaremos este correo para confirmar el registro.</div>
+                @if (mostrarError('correo')) {
+                  <div class="invalid-feedback">{{ mensajeError('correo') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono *</label>
+                <input id="telefono" type="tel" class="form-control"
+                       formControlName="telefono" placeholder="Ej: 3001234567"
+                       (blur)="validarAlSalir('telefono')"
+                       [class.is-invalid]="mostrarError('telefono')">
+                @if (mostrarError('telefono')) {
+                  <div class="invalid-feedback">{{ mensajeError('telefono') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="especialidadInteres" class="form-label">Especialidad de interés *</label>
+                <select id="especialidadInteres" class="form-select"
+                        formControlName="especialidad"
+                        (blur)="validarAlSalir('especialidad')"
+                        [class.is-invalid]="mostrarError('especialidad')">
+                  <option value="">Seleccione una especialidad</option>
+                  <option>Terapia Neural</option>
+                  <option>Quiropraxia</option>
+                  <option>Fisioterapia</option>
+                  <option>Nutrición y Dietética Terapéutica</option>
+                  <option>Medicina del Deporte</option>
+                  <option>Odontología</option>
+                </select>
+                @if (mostrarError('especialidad')) {
+                  <div class="invalid-feedback">{{ mensajeError('especialidad') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento *</label>
+                <input id="fechaNacimiento" type="date" class="form-control"
+                       formControlName="fechaNacimiento"
+                       (blur)="validarAlSalir('fechaNacimiento')"
+                       [class.is-invalid]="mostrarError('fechaNacimiento')">
+                @if (mostrarError('fechaNacimiento')) {
+                  <div class="invalid-feedback">{{ mensajeError('fechaNacimiento') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="contrasena" class="form-label">Contraseña *</label>
+                <input id="contrasena" type="password" class="form-control"
+                       formControlName="contrasena" placeholder="Mínimo 8 caracteres"
+                       (blur)="validarAlSalir('contrasena')"
+                       [class.is-invalid]="mostrarError('contrasena')">
+                @if (mostrarError('contrasena')) {
+                  <div class="invalid-feedback">{{ mensajeError('contrasena') }}</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label for="confirmarContrasena" class="form-label">Confirmar contraseña *</label>
+                <input id="confirmarContrasena" type="password" class="form-control"
+                       formControlName="confirmarContrasena" placeholder="Repite la contraseña"
+                       (blur)="validarAlSalir('confirmarContrasena')"
+                       [class.is-invalid]="mostrarError('confirmarContrasena')">
+                @if (mostrarError('confirmarContrasena')) {
+                  <div class="invalid-feedback">{{ mensajeError('confirmarContrasena') }}</div>
+                }
+              </div>
+
+              <fieldset class="col-12">
+                <legend class="form-label fs-6">Género *</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" formControlName="genero" id="generoF" value="femenino">
+                  <label class="form-check-label" for="generoF">Femenino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" formControlName="genero" id="generoM" value="masculino">
+                  <label class="form-check-label" for="generoM">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" formControlName="genero" id="generoOtro" value="otro">
+                  <label class="form-check-label" for="generoOtro">Otro</label>
+                </div>
+                @if (mostrarError('genero')) {
+                  <div class="text-danger small mt-1">{{ mensajeError('genero') }}</div>
+                }
+              </fieldset>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terminos" formControlName="terminos">
+                  <label class="form-check-label" for="terminos">
+                    Acepto los términos y condiciones y el tratamiento de mis datos personales *
+                  </label>
+                  @if (mostrarError('terminos')) {
+                    <div class="text-danger small mt-1">{{ mensajeError('terminos') }}</div>
+                  }
+                </div>
+              </div>
+
+              <div class="col-12 mt-2">
+                <button type="submit" class="btn btn-primary btn-registro">
+                  <i class="bi bi-person-check me-1"></i>Registrar
+                </button>
+              </div>
+
+              @if (mensajeExito) {
+                <div class="col-12">
+                  <div class="alert alert-success mb-0" role="alert">
+                    <i class="bi bi-check-circle-fill me-1"></i>
+                    ¡Registro exitoso! Revisa tu correo para confirmar tu cuenta.
+                  </div>
+                </div>
+              }
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

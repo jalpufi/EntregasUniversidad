@@ -1,0 +1,6 @@
+.card-producto { border: 2px solid #D6EEF0; height: 100%; border-radius: 14px; overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
+.card-producto:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(7,89,133,.12); }
+.card-producto img { height: 170px; object-fit: cover; background: #E6FFFB; }
+.card-producto .precio { color: #F97316; font-weight: 700; }
+.btn-outline-dorado { color: #075985; border-color: #0EA5A4; }
+.btn-outline-dorado:hover { background-color: #0EA5A4; border-color: #0EA5A4; color: #fff; }
